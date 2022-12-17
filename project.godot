@@ -14,6 +14,10 @@ config/name="Monster"
 run/main_scene="res://Scenes/Test.tscn"
 config/icon="res://Assets/Raw/icon.png"
 
+[global]
+
+"anti aliasing"=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

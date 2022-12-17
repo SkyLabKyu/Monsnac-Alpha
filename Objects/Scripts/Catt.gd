@@ -14,4 +14,4 @@ func _process(delta):
 	direction.x = float(int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")))
 	direction.y = float(int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up")))
 	
-	move_and_collide(direction)
+	move_and_slide(direction*mSpeed)
