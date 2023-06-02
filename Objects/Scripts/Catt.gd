@@ -26,3 +26,5 @@ func _process(delta):
 	else:
 		Sprite.flip_h = false
 	move_and_slide(direction*mSpeed)
+	
+

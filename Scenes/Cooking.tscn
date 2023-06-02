@@ -29,25 +29,25 @@ centered = false
 position = Vector2( 648.5, 222.5 )
 shape = SubResource( 1 )
 
-[node name="Pan" type="Node2D" parent="."]
+[node name="Pan" type="Node2D" parent="Stovetop"]
 position = Vector2( 917, 152 )
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Pan"]
+[node name="Sprite" type="Sprite" parent="Stovetop/Pan"]
 texture = ExtResource( 3 )
 
-[node name="Cook Area" type="Area2D" parent="Pan"]
+[node name="Cook Area" type="Area2D" parent="Stovetop/Pan"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Cook Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stovetop/Pan/Cook Area"]
 position = Vector2( -24, 4 )
 shape = SubResource( 2 )
 
-[node name="Grab Area" type="Area2D" parent="Pan"]
+[node name="Grab Area" type="Area2D" parent="Stovetop/Pan"]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Grab Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stovetop/Pan/Grab Area"]
 rotation = 1.5708
 shape = SubResource( 3 )
 
-[connection signal="mouse_entered" from="Pan/Grab Area" to="Pan" method="_on_Grab_Area_mouse_entered"]
-[connection signal="mouse_exited" from="Pan/Grab Area" to="Pan" method="_on_Grab_Area_mouse_exited"]
+[connection signal="mouse_entered" from="Stovetop/Pan/Grab Area" to="Stovetop/Pan" method="_on_Grab_Area_mouse_entered"]
+[connection signal="mouse_exited" from="Stovetop/Pan/Grab Area" to="Stovetop/Pan" method="_on_Grab_Area_mouse_exited"]
