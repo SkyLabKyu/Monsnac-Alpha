@@ -13,7 +13,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 8
+frame = 18
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
