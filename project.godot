@@ -8,11 +8,25 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Movable",
+"language": "GDScript",
+"path": "res://Objects/Scripts/Class Definitions/Movable.gd"
+} ]
+_global_script_class_icons={
+"Movable": ""
+}
+
 [application]
 
 config/name="Monster"
 run/main_scene="res://Scenes/Test.tscn"
 config/icon="res://Assets/Raw/icon.png"
+
+[display]
+
+window/size/resizable=false
 
 [global]
 

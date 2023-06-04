@@ -1,31 +1,47 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fore_Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Objects/Catt.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Cooking.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Scripts/Workspace.gd" type="Script" id=4]
+[ext_resource path="res://Objects/Scripts/Mouse_Track.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Sink_Station.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.0192
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Root" type="Node2D"]
 position = Vector2( 0, -1 )
 
 [node name="Cooking" parent="." instance=ExtResource( 3 )]
-visible = false
+
+[node name="Sink_Station" parent="." instance=ExtResource( 6 )]
 
 [node name="Background Tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -196612, 20, 0, -196611, 36, 0, -262144, 36, 0, -262141, 36, 0, -131077, 20, 0, -65539, 32, 0, -65538, 32, 0, -65537, 32, 0, -131072, 32, 0, -131071, 32, 0, -131070, 32, 0, -131069, 32, 0, -131068, 32, 0, -131067, 32, 0, -3, 8, 0, -2, 8, 0, -1, 8, 0, -65536, 8, 0, -65535, 8, 0, -65534, 8, 0, -65533, 8, 0, -65532, 8, 0, -65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 131067, 8, 0, 131068, 8, 0, 131069, 8, 0, 131070, 12, 0, 131071, 12, 0, 65536, 12, 0, 65537, 12, 0, 65538, 12, 0, 65539, 16, 0, 65540, 8, 0, 65541, 8, 0, 196603, 8, 0, 196604, 8, 0, 196605, 8, 0, 196606, 8, 0, 196607, 8, 0, 131072, 8, 0, 131073, 8, 0, 131074, 8, 0, 131075, 8, 0, 131076, 8, 0, 131077, 8, 0, 262139, 8, 0, 262140, 8, 0, 262141, 8, 0, 262142, 8, 0, 262143, 8, 0, 196608, 8, 0, 196609, 8, 0, 196610, 8, 0, 196611, 8, 0, 196612, 8, 0, 196613, 8, 0 )
+tile_data = PoolIntArray( -196612, 20, 0, -196611, 36, 0, -262144, 36, 0, -262141, 36, 0, -131077, 20, 0, -65539, 32, 0, -65538, 32, 0, -65537, 32, 0, -131072, 32, 0, -131071, 32, 0, -131070, 32, 0, -131069, 32, 0, -131068, 32, 0, -131067, 32, 0, -3, 8, 0, -2, 8, 0, -1, 8, 0, -65536, 8, 0, -65535, 8, 0, -65534, 8, 0, -65533, 8, 0, -65532, 8, 0, -65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 131067, 8, 0, 131068, 8, 0, 131069, 8, 0, 131070, 12, 0, 131071, 12, 0, 65536, 12, 0, 65537, 12, 0, 65538, 12, 0, 65539, 16, 0, 65540, 11, 0, 65541, 8, 0, 196603, 8, 0, 196604, 8, 0, 196605, 11, 0, 196606, 11, 0, 196607, 11, 0, 131072, 11, 0, 131073, 11, 0, 131074, 11, 0, 131075, 11, 0, 131076, 11, 0, 131077, 8, 0, 262139, 8, 0, 262140, 8, 0, 262141, 8, 0, 262142, 8, 0, 262143, 8, 0, 196608, 8, 0, 196609, 8, 0, 196610, 8, 0, 196611, 8, 0, 196612, 8, 0, 196613, 8, 0 )
 
 [node name="Catt" parent="." instance=ExtResource( 2 )]
 collision_mask = 0
 mSpeed = 64
 
+[node name="Sink" type="Area2D" parent="."]
+position = Vector2( 16, -26 )
+collision_layer = 0
+input_pickable = false
+monitorable = false
+script = ExtResource( 4 )
+Assigned_Workspace = "../Sink_Station"
+
+[node name="Workspace" type="CollisionShape2D" parent="Sink"]
+shape = SubResource( 1 )
+
 [node name="Cooker" type="Area2D" parent="."]
-position = Vector2( -7.024, 0 )
+position = Vector2( -48, -26 )
 collision_layer = 0
 input_pickable = false
 monitorable = false
@@ -33,14 +49,23 @@ script = ExtResource( 4 )
 Assigned_Workspace = "../Cooking"
 
 [node name="Workspace" type="CollisionShape2D" parent="Cooker"]
-position = Vector2( -40, -32 )
 shape = SubResource( 1 )
 
 [node name="Foreground Tiles" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -65538, 25, 0, 3, 17, 0, 4, 16, 0, 131069, 12, 0, 131070, 12, 0, 131071, 12, 0, 65536, 12, 0, 65537, 12, 0, 65538, 12, 0, 65539, 16, 0, 65540, 18, 0, 196605, 47, 0, 196606, 47, 0, 196607, 47, 0, 131072, 47, 0, 131073, 47, 0, 131074, 47, 0, 131075, 18, 0 )
+tile_data = PoolIntArray( -65538, 25, 0, -131072, 25, 0, 3, 17, 0, 4, 16, 0, 131069, 12, 0, 131070, 12, 0, 131071, 12, 0, 65536, 12, 0, 65537, 12, 0, 65538, 12, 0, 65539, 16, 0, 65540, 18, 0, 196605, 47, 0, 196606, 47, 0, 196607, 47, 0, 131072, 47, 0, 131073, 47, 0, 131074, 47, 0, 131075, 18, 0 )
 
+[node name="Mouse" type="KinematicBody2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Box" type="CollisionShape2D" parent="Mouse"]
+scale = Vector2( 0.01, 0.01 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[connection signal="body_entered" from="Sink" to="Sink" method="_on_Cooker_body_entered"]
+[connection signal="body_exited" from="Sink" to="Sink" method="_on_Cooker_body_exited"]
 [connection signal="body_entered" from="Cooker" to="Cooker" method="_on_Cooker_body_entered"]
 [connection signal="body_exited" from="Cooker" to="Cooker" method="_on_Cooker_body_exited"]
