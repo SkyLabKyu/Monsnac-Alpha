@@ -1,20 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Raw/Station_C.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Raw/Pan.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Raw/Station_C.png" type="Texture2D" id=1]
+[ext_resource path="res://Assets/Raw/Pan.png" type="Texture2D" id=2]
 [ext_resource path="res://Objects/Scripts/CookingTool.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Raw/sink.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/Raw/sink.jpg" type="Texture2D" id=4]
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 29.0
 height = 60.0
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 108.25, 85 )
+size = Vector2( 108.25, 85 )
 
 [node name="Wrapper" type="CanvasLayer"]
 
-[node name="Background" type="Sprite" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2( 512, 0 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
@@ -24,20 +24,20 @@ centered = false
 position = Vector2( 917, 152 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Pan"]
+[node name="Sprite2D" type="Sprite2D" parent="Pan"]
 texture = ExtResource( 2 )
 
-[node name="Grab Area" type="Area2D" parent="Pan"]
+[node name="Grab Area3D" type="Area2D" parent="Pan"]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Grab Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Grab Area3D"]
 rotation = 1.5708
 shape = SubResource( 3 )
 
 [node name="Sink" type="Area2D" parent="."]
 collision_layer = 0
 
-[node name="Visual" type="Sprite" parent="Sink"]
+[node name="Visual" type="Sprite2D" parent="Sink"]
 position = Vector2( 771, 215 )
 scale = Vector2( 0.287, 0.287 )
 texture = ExtResource( 4 )

@@ -1,28 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bxo44nsk8sbxu"]
 
-[ext_resource path="res://Assets/Sprites/Cat_Frames.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://Objects/Scripts/Catt.gd" type="Script" id=2]
+[ext_resource type="SpriteFrames" uid="uid://cnmikbeyp1oi5" path="res://Assets/Sprites/Cat_Frames.tres" id="1"]
+[ext_resource type="Script" path="res://Objects/Scripts/Catt.gd" id="2"]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 13.0
+[sub_resource type="CapsuleShape2D" id="1"]
+radius = 0.0
 height = 0.0
 
-[node name="KinematicBody2D" type="KinematicBody2D" groups=["Player"]]
-script = ExtResource( 2 )
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("2")
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
-frames = ExtResource( 1 )
-animation = "Idle"
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1")
+animation = &"Idle"
 frame = 19
-playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2( 0.12, 0.12 )
-offset = Vector2( 128, 0 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
+scale = Vector2(0.12, 0.12)
+offset = Vector2(128, 0)
+zoom = Vector2(2, 2)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")

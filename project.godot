@@ -6,26 +6,19 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Node2D",
-"class": "Movable",
-"language": "GDScript",
-"path": "res://Objects/Scripts/Class Definitions/Movable.gd"
-} ]
-_global_script_class_icons={
-"Movable": ""
-}
+config_version=5
 
 [application]
 
 config/name="Monster"
 run/main_scene="res://Scenes/Test.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://Assets/Raw/icon.png"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=600
 window/size/resizable=false
 
 [global]
@@ -40,8 +33,8 @@ common/drop_mouse_on_gui_input_disabled=true
 
 mouse_click={
 "deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
- ]
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
 }
 
 [physics]
@@ -50,4 +43,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://Assets/default_env.tres"
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_environment="res://Assets/default_env.tres"

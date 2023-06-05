@@ -1,0 +1,6 @@
+res://Assets/default_env.tres
+res://Scenes/Test.tscn
+res://Assets/Sprites/Cat_Frames.tres
+res://Objects/Scripts/Catt.gd
+res://Objects/Catt.tscn
+res://Scenes/Cooking.tscn

@@ -1,41 +1,41 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://bpqe302qf3254"]
 
-[ext_resource path="res://Assets/Raw/Station_C.png" type="Texture" id=1]
-[ext_resource path="res://Objects/Scripts/CookingTool.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Raw/Pan.png" type="Texture" id=3]
+[ext_resource type="Texture2D" uid="uid://bky3ttxer4o36" path="res://Assets/Raw/Station_C.png" id="1"]
+[ext_resource type="Script" path="res://Objects/Scripts/CookingTool.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://drjydn8vm3jab" path="res://Assets/Raw/Pan.png" id="3"]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id="3"]
 radius = 29.0
 height = 60.0
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 111.5, 100.5 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(111.5, 100.5)
 
 [node name="Wrapper" type="CanvasLayer"]
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 512, 0 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 1 )
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(512, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("1")
 centered = false
 
 [node name="Pan" type="Node2D" parent="."]
-position = Vector2( 917, 152 )
-script = ExtResource( 2 )
+position = Vector2(917, 152)
+script = ExtResource("2")
 
-[node name="Sprite" type="Sprite" parent="Pan"]
-texture = ExtResource( 3 )
+[node name="Sprite2D" type="Sprite2D" parent="Pan"]
+texture = ExtResource("3")
 
-[node name="Grab Area" type="Area2D" parent="Pan"]
+[node name="Grab Area3D" type="Area2D" parent="Pan"]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Grab Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Grab Area3D"]
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource("3")
 
 [node name="Stovetop" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="Stove_Area" type="CollisionShape2D" parent="Stovetop"]
-position = Vector2( 648.5, 222.5 )
-shape = SubResource( 1 )
+position = Vector2(648.5, 222.5)
+shape = SubResource("1")

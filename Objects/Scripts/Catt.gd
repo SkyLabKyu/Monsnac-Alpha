@@ -1,9 +1,9 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 
-export var mSpeed = 0
+@export var mSpeed = 0
 
-onready var Sprite = get_node("Sprite")
+@onready var Sprite = get_node("Sprite2D")
 
 func _process(delta):
 	var direction = Vector2(0, 0)
@@ -25,6 +25,7 @@ func _process(delta):
 		Sprite.flip_h = true
 	else:
 		Sprite.flip_h = false
-	move_and_slide(direction*mSpeed)
+	set_velocity(direction*mSpeed)
+	move_and_slide()
 	
 

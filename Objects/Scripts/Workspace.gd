@@ -1,6 +1,6 @@
 extends Area2D
 
-export var Assigned_Workspace = "."
+@export var Assigned_Workspace = "."
 
 var space
 var active = false

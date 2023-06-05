@@ -1,8 +1,8 @@
 class_name Movable extends Node2D
 
-export var hovered = true
-export var Grab_Area_Reference = "Grab Area"
-export var Cursor_Reference = "/root/Root/Mouse"
+@export var hovered = true
+@export var Grab_Area_Reference = "Grab Area3D"
+@export var Cursor_Reference = "/root/Root/Mouse"
 
 var mouse_mov_buff = Vector2(0, 0)
 var mouse_pos_buff = Vector2(0, 0)

@@ -1,30 +1,30 @@
 [gd_resource type="TileSet" load_steps=10 format=2]
 
-[ext_resource path="res://Assets/Raw/Kitchen Counter.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Raw/Kitchen Counter.png" type="Texture2D" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+points = PackedVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+points = PackedVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
-points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+points = PackedVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=18]
-points = PoolVector2Array( 0, 0, 32, 0, 0, 32 )
+points = PackedVector2Array( 0, 0, 32, 0, 0, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
-points = PoolVector2Array( 32, 32, 0, 32, 32, 0 )
+points = PackedVector2Array( 32, 32, 0, 32, 32, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=12]
-points = PoolVector2Array( 0, 30.95, 32, 0, 32, 79.6388, 0, 111.578 )
+points = PackedVector2Array( 0, 30.95, 32, 0, 32, 79.6388, 0, 111.578 )
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 38, 0, 38 )
+points = PackedVector2Array( 0, 0, 32, 0, 32, 38, 0, 38 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
-points = PoolVector2Array( 96, 64, 0, 64, 0, 0, 96, 0 )
+points = PackedVector2Array( 96, 64, 0, 64, 0, 0, 96, 0 )
 
 [resource]
 8/name = "Kitchen Counter.png 8"
