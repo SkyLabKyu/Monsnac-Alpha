@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpqe302qf3254"]
+[gd_scene load_steps=5 format=3 uid="uid://bpqe302qf3254"]
 
-[ext_resource type="Texture2D" uid="uid://bky3ttxer4o36" path="res://Assets/Raw/Station_C.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://fsc0167jf32x" path="res://Assets/Raw/right_window_counter.png" id="1_ewfnv"]
 [ext_resource type="Script" path="res://Objects/Scripts/CookingTool.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://drjydn8vm3jab" path="res://Assets/Raw/Pan.png" id="3"]
 
@@ -8,19 +8,16 @@
 radius = 29.0
 height = 122.0
 
-[sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(241, 220)
-
 [node name="Wrapper" type="CanvasLayer"]
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(512, 0)
 scale = Vector2(4, 4)
-texture = ExtResource("1")
+texture = ExtResource("1_ewfnv")
 centered = false
 
 [node name="Pan" type="Node2D" parent="."]
-position = Vector2(917, 152)
+position = Vector2(917, 300)
 script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pan"]
@@ -32,10 +29,3 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pan/Grab Area3D"]
 rotation = 1.5708
 shape = SubResource("3")
-
-[node name="Stovetop" type="Area2D" parent="."]
-collision_layer = 0
-
-[node name="Stove_Area" type="CollisionShape2D" parent="Stovetop"]
-position = Vector2(648.5, 226)
-shape = SubResource("1")
