@@ -6,10 +6,10 @@
 
 [sub_resource type="CapsuleShape2D" id="3"]
 radius = 29.0
-height = 60.0
+height = 122.0
 
 [sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(111.5, 100.5)
+size = Vector2(241, 220)
 
 [node name="Wrapper" type="CanvasLayer"]
 
@@ -37,5 +37,5 @@ shape = SubResource("3")
 collision_layer = 0
 
 [node name="Stove_Area" type="CollisionShape2D" parent="Stovetop"]
-position = Vector2(648.5, 222.5)
+position = Vector2(648.5, 226)
 shape = SubResource("1")

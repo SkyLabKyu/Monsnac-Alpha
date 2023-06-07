@@ -1,5 +1,6 @@
 res://Assets/default_env.tres
 res://Scenes/Test.tscn
 res://Assets/Sprites/Cat_Frames.tres
+res://Assets/Kitchen.tres
 res://Objects/Catt.tscn
 res://Scenes/Cooking.tscn
